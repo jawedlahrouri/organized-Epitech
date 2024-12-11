@@ -9,6 +9,7 @@
     #define MY_H
     #include <stdio.h>
     #include <stdarg.h>
+    #include <stdlib.h>
 int my_put_nbr(int nb);
 void my_swap(int *a, int *b);
 int my_putstr(char const *str);
@@ -26,4 +27,7 @@ int flag_detector(const char *format, int i, va_list list);
 int my_printf(const char *format, ...);
 int main(void);
 char *my_strdup(char const *src);
+int add_multiple(void *data, char *args, char *args_second);
+int find_type(char *args);
+int my_strcmp(char *const str1, char *const str2);
 #endif

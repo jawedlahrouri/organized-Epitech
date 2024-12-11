@@ -5,38 +5,34 @@
 ** organized
 */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "../include/my.h"
-#include "../include/node.h"
-#include "../include/shell.h"
+#include "my.h"
+#include "node.h"
+#include "shell.h"
 
 int add(void *data, char **args)
 {
-    static int id = 0;
-    node_t **link = data;
-    node_t *new_node = malloc(sizeof(node_t));
-
-    if (new_node == NULL)
-        return 84;
-
-    new_node->type = my_strdup(args[0]);
-    new_node->name = my_strdup(args[1]);
-    if (!new_node->type || !new_node->name) {
-        free(new_node);
-        return 84;
+    for (int j = 0; args[j] != NULL && args[j + 1] != NULL; j = j + 2) {
+        if (!args[j] || !args[j + 1])
+            return 84;
+        add_multiple(data, args[j], args[j + 1]);
     }
-    new_node->id = id;
-    new_node->next = *link;
-    *link = new_node;
-my_printf("%s n°%i - \"%s\" added.\n", new_node->type, id, new_node->name);
-    id++;
     return 0;
 }
 
 int del(void *data, char **args)
 {
+    node_t *actual = *((node_t **)data);
+    node_t *temp = malloc(sizeof(node_t));
+
+    if (actual == NULL)
+        return 84;
+    while (actual->next->id != args[0] || actual == NULL)
+        actual = actual->next;
+    temp->next = actual->next->next;
+    free(actual->next);
+    actual->next = temp->next;
+    my_printf("%s n°%i - \"%s\"", actual->type, actual->id, actual->name);
+    my_printf(" deleted.\n");
     return 0;
 }
 
@@ -50,7 +46,7 @@ int disp(void *data, char **args)
     node_t *actual = *((node_t **)data);
 
     if (actual == NULL)
-        my_printf ("y a r");
+        return 84;
     while (actual != NULL) {
             my_printf("%s n°%i - \"%s\"\n", actual->type, actual->id, actual->name);
         actual = actual->next;

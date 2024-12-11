@@ -9,6 +9,8 @@ pathdir = libprint
 NAME = printf
 
 SRC	=	src/organized.c \
+		src/add_option.c \
+		$(pathdir)/my_strcmp.c \
 		$(pathdir)/my_strdup.c \
 		$(pathdir)/my_put_nbr.c \
 		$(pathdir)/my_putchar.c \
