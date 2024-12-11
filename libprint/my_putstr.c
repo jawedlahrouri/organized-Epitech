@@ -13,7 +13,7 @@ int my_putstr(char const *str)
 
     while (str[i] != '\0'){
         my_putchar(str[i]);
-        i = i + 1;
+        i++;
     }
     return 0;
 }

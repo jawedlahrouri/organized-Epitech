@@ -9,6 +9,7 @@ pathdir = libprint
 NAME = printf
 
 SRC	=	src/organized.c \
+		$(pathdir)/my_strdup.c \
 		$(pathdir)/my_put_nbr.c \
 		$(pathdir)/my_putchar.c \
 		$(pathdir)/my_putstr.c \
@@ -26,7 +27,7 @@ SRC	=	src/organized.c \
 OBJ  	=	 $(SRC:.c=.o)
 
 ORGANIZED = organized
-CFLAGS = -Iinclude/
+CFLAGS = -Iinclude/ -g
 
 LDFLAGS = -L. -lshell
 
@@ -47,4 +48,4 @@ re:
 
 debug:
 		$(MAKE) clean
-		gcc -g $(SRC) -o $(ORGANIZED) $(CFLAGS)
+		gcc -g Wall -Wextra -W $(SRC) -o $(ORGANIZED) $(CFLAGS)

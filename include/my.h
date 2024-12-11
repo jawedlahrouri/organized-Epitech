@@ -25,6 +25,5 @@ void flag_x(va_list list);
 int flag_detector(const char *format, int i, va_list list);
 int my_printf(const char *format, ...);
 int main(void);
-int my_str_isnum(char const *str);
-
+char *my_strdup(char const *src);
 #endif
