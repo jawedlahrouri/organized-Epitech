@@ -23,21 +23,19 @@ int del(void *data, char **args)
 {
     node_t *actual = *((node_t **)data);
     node_t *temp = malloc(sizeof(node_t));
-    printf("A\n");
+
     if (actual == NULL)
         return 84;
     if (my_str_isnum(args[0]) == 0)
         return 84;
-    if (actual->id == my_getnbr(args[ 0])) {
-        printf("1/n");
+    if (actual->id == my_getnbr(args[0])) {
         temp = actual;
         actual = actual->next;
         free(temp);
         return 0;
     }
-    for (;actual->next != NULL; actual = actual->next) {
-        printf("hello/n");
-        if (actual->next->id== my_getnbr(args[0])) {
+    for (; actual->next != NULL; actual = actual->next) {
+        if (actual->next->id == my_getnbr(args[0])) {
             temp = actual->next;
             actual->next = actual->next->next;
             free(temp);
