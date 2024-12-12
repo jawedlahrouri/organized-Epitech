@@ -30,4 +30,5 @@ char *my_strdup(char const *src);
 int add_multiple(void *data, char *args, char *args_second);
 int find_type(char *args);
 int my_strcmp(char *const str1, char *const str2);
+int my_str_isnum(char const *str);
 #endif
