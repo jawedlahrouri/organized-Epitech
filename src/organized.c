@@ -51,10 +51,14 @@ int disp(void *data, char **args)
     return 0;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
     node_t *link = NULL;
 
+    if (argc == 2) {
+        if (argv[1][0] == '-' && argv[1][1] == 'h' && argv[1][2] == '\0')
+            return display_help();
+    }
     workshop_shell(&link);
     return 0;
 }

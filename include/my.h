@@ -25,7 +25,7 @@ void flag_x2(va_list list);
 void flag_x(va_list list);
 int flag_detector(const char *format, int i, va_list list);
 int my_printf(const char *format, ...);
-int main(void);
+int main(int argc, char **argv);
 char *my_strdup(char const *src);
 int add_multiple(void *data, char *args, char *args_second);
 int find_type(char *args);
@@ -37,4 +37,5 @@ int del_first(void *data);
 int del_last(void *data);
 int del_the_one(void *data);
 int del_mid(void *data, char **args, int j);
+int display_help(void);
 #endif
