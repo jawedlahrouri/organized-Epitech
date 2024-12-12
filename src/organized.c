@@ -26,6 +26,8 @@ int del(void *data, char **args)
 
     if (actual == NULL)
         return 84;
+    if (my_str_isnum(args[0]) == 0)
+        return 84;
     while (actual->next->id != args[0] || actual == NULL)
         actual = actual->next;
     temp->next = actual->next->next;
@@ -43,13 +45,13 @@ int sort(void *data, char **args)
 
 int disp(void *data, char **args)
 {
-    node_t *actual = *((node_t **)data);
+    node_t *act = *((node_t **)data);
 
-    if (actual == NULL)
+    if (act == NULL)
         return 84;
-    while (actual != NULL) {
-            my_printf("%s n°%i - \"%s\"\n", actual->type, actual->id, actual->name);
-        actual = actual->next;
+    while (act != NULL) {
+            my_printf("%s n°%i - \"%s\"\n", act->type, act->id, act->name);
+        act = act->next;
     }
     return 0;
 }

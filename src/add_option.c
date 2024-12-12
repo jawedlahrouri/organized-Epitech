@@ -25,7 +25,7 @@ int add_multiple(void *data, char *args, char *args_second)
         *link = new_node;
         my_printf("%s n°%i - \"%s\"", new_node->type, id, new_node->name);
         my_printf(" added.\n");
-        id ++;
+        id++;
     }
     return 0;
 }
