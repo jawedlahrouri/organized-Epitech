@@ -33,7 +33,6 @@ OBJ  	=	 $(SRC:.c=.o)
 
 ORGANIZED = organized
 CFLAGS = -Iinclude/ -g
-
 LDFLAGS = -L. -lshell
 
 $(ORGANIZED): $(OBJ)
@@ -53,4 +52,4 @@ re:
 
 debug:
 		$(MAKE) clean
-		gcc -g Wall -Wextra -W $(SRC) -o $(ORGANIZED) $(CFLAGS)
+		gcc -g -Wall -Wextra -W $(SRC) -o $(ORGANIZED) $(CFLAGS)

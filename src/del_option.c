@@ -12,8 +12,9 @@
 int del_multiple(void *data, char **args, int j)
 {
     node_t *a = *((node_t **)data);
-    node_t *temp = NULL;
 
+    if (a == NULL)
+        return 84;
     if (a->id == my_getnbr(args[j]) && a->next == NULL)
         return del_the_one(data);
     if (a->id == my_getnbr(args[j]))
@@ -71,8 +72,8 @@ int del_the_one(void *data)
 
     if (*link == NULL)
         return 84;
-    my_printf("%s n°%i", (*link)->next->type, (*link)->next->id);
-    my_printf(" - \"%s\" deleted.\n", (*link)->next->name);
+    my_printf("%s n°%i", (*link)->type, (*link)->id);
+    my_printf(" - \"%s\" deleted.\n", (*link)->name);
     free((*link)->type);
     free((*link)->name);
     free(*link);
