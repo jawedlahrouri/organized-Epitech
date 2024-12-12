@@ -22,27 +22,14 @@ int add(void *data, char **args)
 int del(void *data, char **args)
 {
     node_t *actual = *((node_t **)data);
-    node_t *temp = malloc(sizeof(node_t));
 
     if (actual == NULL)
         return 84;
-    if (my_str_isnum(args[0]) == 0)
-        return 84;
-    if (actual->id == my_getnbr(args[0])) {
-        temp = actual;
-        actual = actual->next;
-        free(temp);
-        return 0;
+    for (int j = 0; args[j] != NULL; j++) {
+        if (my_str_isnum(args[j]) == 0)
+            return 84;
+        del_multiple(data, args, j);
     }
-    for (; actual->next != NULL; actual = actual->next) {
-        if (actual->next->id == my_getnbr(args[0])) {
-            temp = actual->next;
-            actual->next = actual->next->next;
-            free(temp);
-        }
-    }
-    my_printf("%s n°%i - \"%s\"", actual->type, actual->id, actual->name);
-    my_printf(" deleted.\n");
     return 0;
 }
 

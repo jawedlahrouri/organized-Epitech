@@ -10,6 +10,7 @@ NAME = printf
 
 SRC	=	src/organized.c \
 		src/add_option.c \
+		src/del_option.c \
 		$(pathdir)/my_getnbr.c \
 		$(pathdir)/my_str_isnum.c \
 		$(pathdir)/my_strcmp.c \

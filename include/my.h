@@ -32,4 +32,9 @@ int find_type(char *args);
 int my_strcmp(char *const str1, char *const str2);
 int my_str_isnum(char const *str);
 int my_getnbr(const char *str);
+int del_multiple(void *data, char **args, int j);
+int del_first(void *data);
+int del_last(void *data);
+int del_the_one(void *data);
+int del_mid(void *data, char **args, int j);
 #endif
