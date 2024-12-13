@@ -12,7 +12,6 @@
 int add(void *data, char **args)
 {
     (void)data;
-
     if (args == NULL)
         return 84;
     for (int j = 0; args[j] != NULL && args[j + 1] != NULL; j = j + 2) {
@@ -28,9 +27,9 @@ int add(void *data, char **args)
 
 int del(void *data, char **args)
 {
-    (void)data;
     node_t *actual = *((node_t **)data);
 
+    (void)data;
     if (args[1] == NULL)
         return 84;
     if (actual == NULL)
@@ -53,9 +52,9 @@ int sort(void *data, char **args)
 
 int disp(void *data, char **args)
 {
-    (void)data;
     node_t *act = *((node_t **)data);
 
+    (void)data;
     if (act == NULL)
         return 84;
     if (args[0] != NULL)
