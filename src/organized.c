@@ -12,7 +12,7 @@
 int add(void *data, char **args)
 {
     (void)data;
-    if (args == NULL)
+    if (args[1] == NULL)
         return 84;
     for (int j = 0; args[j] != NULL && args[j + 1] != NULL; j = j + 2) {
         if (args[j] == NULL)
