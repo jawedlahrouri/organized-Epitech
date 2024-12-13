@@ -11,12 +11,14 @@
 
 int add(void *data, char **args)
 {
-    int status = 0;
+    (void)data;
 
     if (args == NULL)
         return 84;
     for (int j = 0; args[j] != NULL && args[j + 1] != NULL; j = j + 2) {
-        if (args[j] == NULL || args[j + 1] == NULL)
+        if (args[j] == NULL)
+            return 84;
+        if (args[j + 1] == NULL)
             return 84;
         if (add_multiple(data, args[j], args[j + 1]) == 84)
             return 84;
@@ -26,10 +28,10 @@ int add(void *data, char **args)
 
 int del(void *data, char **args)
 {
+    (void)data;
     node_t *actual = *((node_t **)data);
-    int status = 0;
 
-    if (args == NULL)
+    if (args[1] == NULL)
         return 84;
     if (actual == NULL)
         return 84;
@@ -44,11 +46,14 @@ int del(void *data, char **args)
 
 int sort(void *data, char **args)
 {
+    (void)args;
+    (void)data;
     return 84;
 }
 
 int disp(void *data, char **args)
 {
+    (void)data;
     node_t *act = *((node_t **)data);
 
     if (act == NULL)
@@ -72,6 +77,5 @@ int main(int argc, char **argv)
             return display_help();
     }
     status = workshop_shell(&link);
-    printf("%d\n", status);
     return status;
 }

@@ -5,6 +5,8 @@
 ** organized
 */
 
+#include "my.h"
+
 int display_help(void)
 {
     my_printf("COMMANDS:\n");

@@ -33,7 +33,7 @@ SRC	=	src/organized.c \
 OBJ  	=	 $(SRC:.c=.o)
 
 ORGANIZED = organized
-CFLAGS = -Iinclude/ -g
+CFLAGS = -Iinclude/ -g -W -Wall -Wextra
 LDFLAGS = -L. -lshell
 
 $(ORGANIZED): $(OBJ)

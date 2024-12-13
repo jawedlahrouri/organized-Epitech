@@ -98,4 +98,5 @@ int del_mid(void *data, char **args, int j)
             return 0;
         }
     }
+    return 84;
 }
