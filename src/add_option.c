@@ -27,6 +27,8 @@ int add_multiple(void *data, char *args, char *args_second)
         my_printf(" added.\n");
         id++;
     }
+    if (find_type(args) == 0)
+        return 84;
     return 0;
 }
 
