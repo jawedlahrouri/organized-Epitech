@@ -30,7 +30,7 @@ int del(void *data, char **args)
     node_t *actual = *((node_t **)data);
 
     (void)data;
-    if (args[1] == NULL)
+    if (args[0] == NULL)
         return 84;
     if (actual == NULL)
         return 84;
