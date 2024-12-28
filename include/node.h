@@ -8,8 +8,8 @@
 #include "my.h"
 #include <stdarg.h>
 
-#ifndef STRUCT_H_
-    #define STRUCT_H_
+#ifndef STRUCTS_H_
+    #define STRUCTS_H_
 
 typedef struct node {
     char *type;

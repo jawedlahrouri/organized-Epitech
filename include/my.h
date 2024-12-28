@@ -10,6 +10,8 @@
     #include <stdio.h>
     #include <stdarg.h>
     #include <stdlib.h>
+    #include "node.h"
+    #include "flags.h"
 int my_put_nbr(int nb);
 void my_swap(int *a, int *b);
 int my_putstr(char const *str);
@@ -38,4 +40,5 @@ int del_last(void *data);
 int del_the_one(void *data);
 int del_mid(void *data, char **args, int j);
 int display_help(void);
+void my_rev_list(void *data);
 #endif

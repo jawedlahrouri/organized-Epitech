@@ -45,9 +45,18 @@ int del(void *data, char **args)
 
 int sort(void *data, char **args)
 {
-    (void)args;
     (void)data;
-    return 84;
+    if (args[0] == NULL)
+        return 84;
+    if (my_strcmp(args[0], "REV") == 0)
+        my_rev_list(data);
+    if (my_strcmp(args[0], "NAME") == 0)
+        return 84;
+    if (my_strcmp(args[0], "TYPE") == 0)
+        return 84;
+    if (my_strcmp(args[0], "ID") == 0)
+        return 84;
+    return 0;
 }
 
 int disp(void *data, char **args)
@@ -56,8 +65,6 @@ int disp(void *data, char **args)
 
     (void)data;
     if (act == NULL)
-        return 84;
-    if (args[0] != NULL)
         return 84;
     while (act != NULL) {
             my_printf("%s n°%i - \"%s\"\n", act->type, act->id, act->name);
@@ -76,5 +83,6 @@ int main(int argc, char **argv)
             return display_help();
     }
     status = workshop_shell(&link);
+    
     return status;
 }
