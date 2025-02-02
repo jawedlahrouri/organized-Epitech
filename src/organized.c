@@ -48,21 +48,23 @@ int sort(void *data, char **args)
     (void)data;
     if (args[0] == NULL)
         return 84;
-    if (my_strcmp(args[0], "REV") == 0)
-        my_rev_list(data);
-    if (my_strcmp(args[0], "NAME") == 0)
-        return 84;
-    if (my_strcmp(args[0], "TYPE") == 0)
-        return 84;
-    if (my_strcmp(args[0], "ID") == 0)
-        return 84;
+    for (int i = 0; args[i] != NULL; i++) {
+        if (my_strcmp(args[i], "REV") == 0)
+            my_rev_list(data);
+        if (my_strcmp(args[i], "NAME") == 0)
+            bubble_name(data);
+        if (my_strcmp(args[i], "TYPE") == 0)
+            bubble_type(data);
+        if (my_strcmp(args[i], "ID") == 0)
+            bubble_id(data);
+    }
     return 0;
 }
 
 int disp(void *data, char **args)
 {
     node_t *act = *((node_t **)data);
-
+    (void)args;
     (void)data;
     if (act == NULL)
         return 84;
@@ -83,6 +85,5 @@ int main(int argc, char **argv)
             return display_help();
     }
     status = workshop_shell(&link);
-    
     return status;
 }

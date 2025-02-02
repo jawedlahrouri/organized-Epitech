@@ -41,4 +41,10 @@ int del_the_one(void *data);
 int del_mid(void *data, char **args, int j);
 int display_help(void);
 void my_rev_list(void *data);
+int my_strncmp(char *const str1, char *const str2);
+int bubble_type(void *data);
+int bubble_name(void *data);
+int bubble_id(void *data);
+int swap_node(node_t *left, node_t *right);
+void my_rev_list(void *data);
 #endif

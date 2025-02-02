@@ -30,6 +30,7 @@ SRC	=	src/organized.c \
 		$(pathdir)/flag_x.c \
 		$(pathdir)/flag_x2.c \
 		$(pathdir)/my_printf.c \
+		$(pathdir)/my_strncmp.c
 
 OBJ  	=	 $(SRC:.c=.o)
 
