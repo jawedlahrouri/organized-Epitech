@@ -49,7 +49,7 @@ int sort(void *data, char **args)
     if (args[0] == NULL)
         return 84;
     for (int i = 0; args[i] != NULL; i++) {
-        if (my_strcmp(args[i], "REV") == 0)
+        if (my_strcmp(args[i], "-r") == 0)
             my_rev_list(data);
         if (my_strcmp(args[i], "NAME") == 0)
             bubble_name(data);
@@ -57,6 +57,8 @@ int sort(void *data, char **args)
             bubble_type(data);
         if (my_strcmp(args[i], "ID") == 0)
             bubble_id(data);
+        else
+            return 84;
     }
     return 0;
 }
