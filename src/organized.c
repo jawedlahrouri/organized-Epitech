@@ -57,8 +57,6 @@ int sort(void *data, char **args)
             bubble_type(data);
         if (my_strcmp(args[i], "ID") == 0)
             bubble_id(data);
-        else
-            return 84;
     }
     return 0;
 }
