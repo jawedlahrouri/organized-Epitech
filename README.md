@@ -19,11 +19,12 @@ To compile and run the project, follow the directory structure and commands belo
 /include/
   ├── shell.h          # Header file for shell function declarations
 /src/
-  ├── main.c          # Entry point of the program
-  ├── commands.c      # Implements add, delete, display, and sort functions
-  ├── utils.c         # Utility functions for linked lists and validation
-/lib/
-  ├── libshell.a      # Provided shell library
+  ├── del_option.c          # Entry point of the program
+  ├── add_option.c.c      # Implements add, delete, display, and sort functions
+  ├── organized.c      # Implements add, delete, display, and sort functions
+  ├── sort.c         # Utility functions for linked lists and validation
+  ├── bonus.c         # Implements -h functions
+libshell.a      # Provided shell library
 Makefile             # Compilation rules
 README.md           # This file
 ```
@@ -77,7 +78,4 @@ This project utilizes linked lists to dynamically store and manage hardware comp
 
 ## Contributors
 This project was developed as part of an EPITECH programming exercise.
-
-## License
-This project is licensed under the MIT License.
 
