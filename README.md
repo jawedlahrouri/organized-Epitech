@@ -32,7 +32,7 @@ README.md           # This file
 ### Compilation
 Clone the repository:
 ```sh
-git clone https://github.com/yourusername/organized.git
+git clone https://github.com/jawedlahrouri/organized-epitech.git
 cd organized
 ```
 Compile the project:
