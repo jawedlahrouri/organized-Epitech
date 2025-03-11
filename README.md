@@ -10,7 +10,6 @@ The **Organized** program includes the following functionalities:
 - **Delete Hardware**: Remove hardware items from the inventory.
 - **Display Inventory**: Show all stored materials in the workshop.
 - **Sort Hardware**: Organize components based on different attributes (type, name, ID) with optional reverse sorting.
-- **Error Handling**: Ensures robust input validation and structured error management.
 
 ## Installation
 To compile and run the project, follow the directory structure and commands below:
